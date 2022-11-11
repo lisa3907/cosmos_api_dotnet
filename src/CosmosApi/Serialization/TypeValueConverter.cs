@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using CosmosApi.Models;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
+using System;
+using System.Collections.Generic;
 
 namespace CosmosApi.Serialization
 {
@@ -32,7 +29,7 @@ namespace CosmosApi.Serialization
             TypeToJsonName[typeof(T)] = jsonName;
         }
         
-        public override void WriteJson(JsonWriter writer, TBaseType value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, TBaseType? value, JsonSerializer serializer)
         {
             if (value == null)
             {
@@ -85,7 +82,7 @@ namespace CosmosApi.Serialization
             writer.WriteEndObject();
         }
 
-        public override TBaseType ReadJson(JsonReader reader, Type objectType, TBaseType existingValue, bool hasExistingValue,
+        public override TBaseType ReadJson(JsonReader reader, Type objectType, TBaseType? existingValue, bool hasExistingValue,
             JsonSerializer serializer)
         {
             var jobject = serializer.Deserialize<JObject>(reader);

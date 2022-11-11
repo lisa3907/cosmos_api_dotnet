@@ -1,14 +1,13 @@
-﻿using System;
+﻿using CosmosApi.Crypto;
+using CosmosApi.Endpoints;
+using CosmosApi.Models;
+using CosmosApi.Serialization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using CosmosApi.Crypto;
-using CosmosApi.Endpoints;
-using CosmosApi.Models;
-using CosmosApi.Serialization;
-using TaskTupleAwaiter;
 
 namespace CosmosApi
 {
